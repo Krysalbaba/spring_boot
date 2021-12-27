@@ -1,0 +1,6 @@
+docker :
+1 修改pom文件后   利用maven打包(注意pom文件中的ip地址)
+2 注意打包生成的jar包和dockerfile 中的 copy指令的jar包是否一致
+3 package后会生成一个镜像
+4 指定运行端口和绑定端口和ip地址(docker容器地址)
+5 直接运行

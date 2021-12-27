@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 9090
   address: 0.0.0.0
 
 mybatis-plus:
@@ -11,7 +11,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.0.88/project?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://192.168.1.88/project?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: 123456
       initial-size: 5
@@ -19,7 +19,7 @@ spring:
       min-idle: 5
       max-wait: 60000
   redis:
-    host: 192.168.0.88
+    host: 192.168.1.88
     port: 6379
     database: 0
 
