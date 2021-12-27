@@ -1,0 +1,39 @@
+[09:34:26:125] - [main] [INFO] - com.java.nie.NieApplication - Starting NieApplication using Java 1.8.0_281 on 折木丶 with PID 21536 (D:\Work\IDEA\demo\spring_boot\target\classes started by 18518 in D:\Work\IDEA\demo\spring_boot)
+[09:34:26:127] - [main] [INFO] - com.java.nie.NieApplication - No active profile set, falling back to default profiles: default
+[09:34:26:764] - [main] [INFO] - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[09:34:26:766] - [main] [INFO] - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[09:34:26:786] - [main] [INFO] - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+[09:34:27:196] - [main] [INFO] - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[09:34:27:203] - [main] [INFO] - o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+[09:34:27:204] - [main] [INFO] - o.a.catalina.core.StandardService - Starting service [Tomcat]
+[09:34:27:204] - [main] [INFO] - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+[09:34:27:308] - [main] [INFO] - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[09:34:27:308] - [main] [INFO] - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1136 ms
+[09:34:27:397] - [main] [INFO] - c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+[09:34:27:602] - [main] [INFO] - c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+[09:34:27:607] - [main] [INFO] - o.a.catalina.core.StandardService - Stopping service [Tomcat]
+[09:34:27:611] - [Druid-ConnectionPool-Create-1693540983] [INFO] - c.a.d.pool.DruidAbstractDataSource - {dataSource-1} failContinuous is true
+[09:34:27:616] - [main] [INFO] - o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[09:37:07:802] - [main] [INFO] - com.java.nie.NieApplication - Starting NieApplication using Java 1.8.0_281 on 折木丶 with PID 20848 (D:\Work\IDEA\demo\spring_boot\target\classes started by 18518 in D:\Work\IDEA\demo\spring_boot)
+[09:37:07:804] - [main] [INFO] - com.java.nie.NieApplication - No active profile set, falling back to default profiles: default
+[09:37:08:369] - [main] [INFO] - o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+[09:37:08:370] - [main] [INFO] - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[09:37:08:390] - [main] [INFO] - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+[09:37:08:806] - [main] [INFO] - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[09:37:08:813] - [main] [INFO] - o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-0.0.0.0-8080"]
+[09:37:08:814] - [main] [INFO] - o.a.catalina.core.StandardService - Starting service [Tomcat]
+[09:37:08:814] - [main] [INFO] - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+[09:37:08:912] - [main] [INFO] - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[09:37:08:912] - [main] [INFO] - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1064 ms
+[09:37:08:986] - [main] [INFO] - c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+[09:37:09:991] - [main] [INFO] - c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+[09:37:11:685] - [main] [INFO] - o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-0.0.0.0-8080"]
+[09:37:11:697] - [main] [INFO] - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[09:37:11:706] - [main] [INFO] - com.java.nie.NieApplication - Started NieApplication in 4.341 seconds (JVM running for 5.59)
+[09:37:26:702] - [http-nio-0.0.0.0-8080-exec-1] [INFO] - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[09:37:26:703] - [http-nio-0.0.0.0-8080-exec-1] [INFO] - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[09:37:26:703] - [http-nio-0.0.0.0-8080-exec-1] [INFO] - o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+[09:37:35:334] - [SpringApplicationShutdownHook] [INFO] - c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+[09:37:35:338] - [SpringApplicationShutdownHook] [INFO] - c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
