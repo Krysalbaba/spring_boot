@@ -6,8 +6,7 @@ import com.java.nie.bean.CommonResult;
 import com.java.nie.bean.ResultGenerator;
 import com.java.nie.domain.TUser;
 import com.java.nie.service.ITUserService;
-import org.apache.catalina.User;
-import org.junit.Test;
+import com.java.nie.config.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.util.ObjectUtils;
@@ -29,6 +28,8 @@ public class TUserController {
     @Autowired
     private ITUserService itUserService;
 
+    @Autowired
+    private RedisService redisService ;
 
     @PostMapping("/login")
     public CommonResult login(@RequestBody TUser user) {
@@ -57,6 +58,12 @@ public class TUserController {
             return ResultGenerator.genSuccessResult();
         }
         return ResultGenerator.genFailResult("注册失败");
+    }
+
+    @GetMapping("/redisDemo")
+    public void  redisDemo(@RequestParam("id") String id){
+        TUser user = itUserService.getById(id);
+        redisService.set(id,user,1800L);
     }
 
     @GetMapping("/demo")

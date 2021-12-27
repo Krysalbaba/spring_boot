@@ -4,3 +4,7 @@ docker :
 3 package后会生成一个镜像
 4 指定运行端口和绑定端口和ip地址(docker容器地址)
 5 直接运行
+
+redis :
+1 集成redis后 先将redis自带的序列化方法换成Jackson2JsonRedisSerializer序列方法
+2 根据常用程度考虑是否编写工具类

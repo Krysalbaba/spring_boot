@@ -4,20 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="demo">
-      <change afterPath="$PROJECT_DIR$/src/main/docker/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="docker插件集成">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/warn.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/warn.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,6 +43,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -104,7 +114,7 @@
       <workItem from="1640591024383" duration="1139000" />
       <workItem from="1640593030302" duration="1194000" />
       <workItem from="1640595089032" duration="3555000" />
-      <workItem from="1640606575033" duration="1123000" />
+      <workItem from="1640606575033" duration="5063000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -120,7 +130,21 @@
       <option name="project" value="LOCAL" />
       <updated>1640593896857</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="docker插件集成">
+      <created>1640607940627</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640607940627</updated>
+    </task>
+    <task id="LOCAL-00004" summary="docker插件集成">
+      <created>1640608013262</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640608013262</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +164,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="demo" />
+    <MESSAGE value="docker插件集成" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker插件集成" />
   </component>
 </project>
