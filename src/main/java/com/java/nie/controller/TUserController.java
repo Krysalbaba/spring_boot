@@ -7,11 +7,17 @@ import com.java.nie.bean.ResultGenerator;
 import com.java.nie.domain.TUser;
 import com.java.nie.service.ITUserService;
 import com.java.nie.config.RedisService;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * <p>
@@ -19,17 +25,36 @@ import org.springframework.web.bind.annotation.*;
  * </p>
  *
  * @author nie
- * @since 2021-12-26
+ * @since 2021-12-28
  */
 @RestController
 @RequestMapping("/tUser")
 public class TUserController {
 
+    //redis token 头部
+    private String token="nie";
+
     @Autowired
     private ITUserService itUserService;
 
     @Autowired
-    private RedisService redisService ;
+    private RedisService redisService;
+
+
+    @GetMapping("/checkLoginName/{loginName}")
+    public CommonResult checkLoginName(@PathVariable("loginName") String loginName) {
+
+        LambdaQueryWrapper<TUser> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(TUser::getLoginName, loginName);
+        //0:未删除 1:已删除
+        wrapper.eq(TUser::getIsDel, 0);
+        List<TUser> list = itUserService.list(wrapper);
+        if (!CollectionUtils.isEmpty(list)) {
+            throw new RuntimeException("用户名重复");
+        }
+        return ResultGenerator.genSuccessResult();
+    }
+
 
     @PostMapping("/login")
     public CommonResult login(@RequestBody TUser user) {
@@ -48,32 +73,14 @@ public class TUserController {
     }
 
     @PostMapping("/register")
-    @Cacheable(value = "uid",key = "#user")
-    public CommonResult register(@RequestBody TUser user) {
-        String uid="AAA12345678";
-        String loginName = user.getLoginName();
-        String password = user.getPassword();
-        if (StringUtils.hasLength(loginName) && StringUtils.hasLength(password)) {
-            itUserService.save(user);
-            return ResultGenerator.genSuccessResult();
-        }
-        return ResultGenerator.genFailResult("注册失败");
+    public CommonResult register(@Validated @RequestBody TUser user) {
+        //将数据设置为 未删除
+        user.setIsDel(0);
+        itUserService.save(user);
+        String idToken=token+user.getId();
+        redisService.set(idToken,user,3600);
+        return ResultGenerator.genSuccessResult();
     }
 
-    @GetMapping("/redisDemo")
-    public void  redisDemo(@RequestParam("id") String id){
-        TUser user = itUserService.getById(id);
-        redisService.set(id,user,1800L);
-    }
-
-    @GetMapping("/demo")
-    @Cacheable(value = "user",key = "#uid")
-    public TUser demo(@RequestParam("uid") String uid){
-        TUser user=new TUser();
-        user.setId("123456");
-        user.setLoginName("zhangsan");
-        user.setPassword("123456");
-        return user;
-    }
 }
 

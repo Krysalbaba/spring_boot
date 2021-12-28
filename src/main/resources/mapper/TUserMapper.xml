@@ -9,6 +9,7 @@
         <result column="phone" property="phone" />
         <result column="email" property="email" />
         <result column="password" property="password" />
+        <result column="is_del" property="isDel" />
         <result column="gmt_create" property="gmtCreate" />
         <result column="gmt_creator" property="gmtCreator" />
         <result column="gmt_update" property="gmtUpdate" />
@@ -17,7 +18,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, login_name, phone, email, password, gmt_create, gmt_creator, gmt_update, gmt_updator
+        id, login_name, phone, email, password, is_del, gmt_create, gmt_creator, gmt_update, gmt_updator
     </sql>
 
 </mapper>

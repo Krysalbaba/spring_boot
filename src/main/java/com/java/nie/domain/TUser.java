@@ -4,10 +4,15 @@ import com.baomidou.mybatisplus.annotation.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 /**
  * <p>
@@ -15,7 +20,7 @@ import lombok.Setter;
  * </p>
  *
  * @author nie
- * @since 2021-12-26
+ * @since 2021-12-28
  */
 @Getter
 @Setter
@@ -30,16 +35,25 @@ public class TUser implements Serializable {
     private String id;
 
     @ApiModelProperty("用户名")
+    @NotNull
     private String loginName;
 
     @ApiModelProperty("手机号")
-    private Long phone;
+    @NotNull
+    @Pattern(regexp = "^[1][3456789]\\d{9}$")     //pattern 只能校验字符串类型
+    private String phone;
 
     @ApiModelProperty("邮箱")
+    @Email
+    @NotNull
     private String email;
 
     @ApiModelProperty("密码")
+    @NotNull
     private String password;
+
+    @ApiModelProperty("是否删除(0:否, 1:是)")
+    private Integer isDel;
 
     @ApiModelProperty("创建时间")
     @TableField(fill = FieldFill.INSERT)

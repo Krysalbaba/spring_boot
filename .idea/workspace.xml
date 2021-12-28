@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="docker插件集成">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisService.java" afterDir="false" />
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="redis 集成及编写工具类">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/MyMetaObjectHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/warn.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/warn.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/domain/TUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/domain/TUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/mapper/TUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/mapper/TUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/service/ITUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/ITUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/service/impl/TUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/impl/TUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TUserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +57,14 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/docker/Dockerfile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -67,6 +76,35 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.NieApplication">
+    <configuration name="MybatisPlusGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mybatisPlus.MybatisPlusGenerator" />
+      <module name="spring_boot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mybatisPlus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TUserController.demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring_boot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.java.nie.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.java.nie.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.java.nie.controller.TUserController" />
+      <option name="METHOD_NAME" value="demo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring_boot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.java.nie.NieApplication" />
@@ -80,7 +118,7 @@
       <deployment type="docker-image">
         <settings>
           <option name="imageTag" value="spring-boot:latest" />
-          <option name="containerName" value="spring-boot" />
+          <option name="containerName" value="spring" />
           <option name="portBindings">
             <list>
               <DockerPortBindingImpl>
@@ -94,8 +132,16 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Docker.Docker Image" />
+      <item itemvalue="Spring Boot.NieApplication" />
+      <item itemvalue="Application.MybatisPlusGenerator" />
+      <item itemvalue="JUnit.TUserController.demo" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TUserController.demo" />
+        <item itemvalue="Application.MybatisPlusGenerator" />
         <item itemvalue="Docker.Docker Image" />
       </list>
     </recent_temporary>
@@ -114,7 +160,10 @@
       <workItem from="1640591024383" duration="1139000" />
       <workItem from="1640593030302" duration="1194000" />
       <workItem from="1640595089032" duration="3555000" />
-      <workItem from="1640606575033" duration="5063000" />
+      <workItem from="1640606575033" duration="5496000" />
+      <workItem from="1640652796186" duration="698000" />
+      <workItem from="1640655232370" duration="1059000" />
+      <workItem from="1640695296529" duration="6243000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -144,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640608013262</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="redis 集成及编写工具类">
+      <created>1640612034683</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640612034683</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +221,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="demo" />
     <MESSAGE value="docker插件集成" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker插件集成" />
+    <MESSAGE value="redis 集成及编写工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis 集成及编写工具类" />
   </component>
 </project>
