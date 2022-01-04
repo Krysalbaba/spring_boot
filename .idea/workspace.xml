@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="集成spring 参数校验框架 并修改redis不支持localdatetime问题">
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="配置mybatis sql打印">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -64,6 +68,22 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.NieApplication">
+    <configuration name="DemoController.demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring_boot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.java.nie.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.java.nie.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.java.nie.controller.DemoController" />
+      <option name="METHOD_NAME" value="demo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring_boot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.java.nie.NieApplication" />
@@ -93,10 +113,12 @@
     </configuration>
     <list>
       <item itemvalue="Docker.Docker Image" />
+      <item itemvalue="JUnit.DemoController.demo" />
       <item itemvalue="Spring Boot.NieApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DemoController.demo" />
         <item itemvalue="Docker.Docker Image" />
       </list>
     </recent_temporary>
@@ -120,7 +142,13 @@
       <workItem from="1640655232370" duration="1059000" />
       <workItem from="1640695296529" duration="7037000" />
       <workItem from="1640739586504" duration="708000" />
-      <workItem from="1640747622479" duration="1207000" />
+      <workItem from="1640747622479" duration="2498000" />
+      <workItem from="1640779418250" duration="1063000" />
+      <workItem from="1640825635724" duration="605000" />
+      <workItem from="1640831405916" duration="7237000" />
+      <workItem from="1640912159239" duration="2599000" />
+      <workItem from="1641208767014" duration="712000" />
+      <workItem from="1641257666127" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -164,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640701665736</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="配置mybatis sql打印">
+      <created>1640748903820</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640748903821</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +222,8 @@
     <MESSAGE value="docker插件集成" />
     <MESSAGE value="redis 集成及编写工具类" />
     <MESSAGE value="集成spring 参数校验框架 并修改redis不支持localdatetime问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="集成spring 参数校验框架 并修改redis不支持localdatetime问题" />
+    <MESSAGE value="配置mybatis sql打印" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置mybatis sql打印" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -196,6 +232,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java</url>
           <line>46</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

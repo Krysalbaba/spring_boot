@@ -25,6 +25,13 @@ spring:
     host: 192.168.0.88
     port: 6379
     database: 0
+  rabbitmq:
+    host: 192.168.0.88
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirm-type: correlated
+    virtual-host: /
 
 logging:
   config: classpath:logback-spring.xml
