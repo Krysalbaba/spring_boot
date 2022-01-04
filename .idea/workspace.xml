@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="配置mybatis sql打印">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" afterDir="false" />
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="配置rabbit (未完成)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQAckConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/NieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/NieApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +27,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -65,6 +70,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\IDEA\demo\spring_boot\src\main" />
       <recent name="D:\Work\IDEA\demo\spring_boot\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.java.nie.config" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.NieApplication">
@@ -148,7 +156,8 @@
       <workItem from="1640831405916" duration="7237000" />
       <workItem from="1640912159239" duration="2599000" />
       <workItem from="1641208767014" duration="712000" />
-      <workItem from="1641257666127" duration="603000" />
+      <workItem from="1641257666127" duration="3313000" />
+      <workItem from="1641299396360" duration="3144000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -199,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640748903821</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="配置rabbit (未完成)">
+      <created>1641258418096</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1641258418096</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +239,8 @@
     <MESSAGE value="redis 集成及编写工具类" />
     <MESSAGE value="集成spring 参数校验框架 并修改redis不支持localdatetime问题" />
     <MESSAGE value="配置mybatis sql打印" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置mybatis sql打印" />
+    <MESSAGE value="配置rabbit (未完成)" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置rabbit (未完成)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -232,16 +249,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java</url>
           <line>46</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

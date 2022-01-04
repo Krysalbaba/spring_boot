@@ -10,45 +10,60 @@ import java.util.Map;
 
 @Configuration
 public class RabbitMQConfig {
-    // 队列名
-    public static final String FANOUT_QUEUE_NAME = "fanout_queue";
-    //交换机名
-    public static final String TEST_FANOUT_EXCHANGE = "fanout_exchange";
+    // 普通队列名
+    public static final String QUEUE_NAME = "queue.name";
+    // 普通交换机名
+    public static final String TOPIC_EXCHANGE_NAME = "topic.exchange.name";
+    // 普通路由key
+    public static final String ROUTING_KEY = "routing_key";
+    //延时队列名
+    public static final String DELAY_QUEUE_NAME = "delay.queue.name";
+    //延时交换机名
+    public static final String DIRECT_DELAY_EXCHANGE_NAME = "direct.delay.exchange.name";
+    //延时路由key
+    public static final String ROUTING_KEY_DELAY = "routing_key_delay";
 
-    public static final String DIRECT_QUEUE_NAME = "direct_queue";
-    public static final String TEST_DIRECT_EXCHANGE = "direct_exchange";
-    public static final String DIRECT_ROUTINGKEY = "test";
-    // 创建队列
+    //创建普通队列
     @Bean
-    public Queue createFanoutQueue() {
-        return new Queue(FANOUT_QUEUE_NAME);
+    public Queue createQueue(){
+        return new Queue(QUEUE_NAME,true);
     }
 
+    //创建延时队列
     @Bean
-    public Queue createDirectQueue() {
-        return new Queue(DIRECT_QUEUE_NAME);
+    public Queue createDelayQueue(){
+        Map<String,Object>  map =new HashMap<>(3);
+        //声明转发时的交换机名
+        map.put("x-dead-letter-exchange",TOPIC_EXCHANGE_NAME);
+        //声明转发时的路由key
+        map.put("x-dead-letter-routing-key",ROUTING_KEY);
+        //创建延时队列
+        return  new Queue(DELAY_QUEUE_NAME,true,false,false,map) ;
     }
 
-    // 创建交换机
+    //创建普通交换机
     @Bean
-    public FanoutExchange defFanoutExchange() {
-        return new FanoutExchange(TEST_FANOUT_EXCHANGE);
+    public TopicExchange createTopicExchange(){
+        return new TopicExchange(TOPIC_EXCHANGE_NAME);
     }
 
+    //创建延时交换机
     @Bean
-    DirectExchange directExchange() {
-        return new DirectExchange(TEST_DIRECT_EXCHANGE);
+    public DirectExchange createDirectExchange(){
+        return new DirectExchange(DIRECT_DELAY_EXCHANGE_NAME);
     }
 
-    // 队列与交换机进行绑定
+
+    //延时队列绑定
     @Bean
-    Binding bindingFanout() {
-        return BindingBuilder.bind(createFanoutQueue()).to(defFanoutExchange());
+    public Binding dlxBinding(){
+        return BindingBuilder.bind(createDelayQueue()).to(createDirectExchange()).with(ROUTING_KEY_DELAY);
     }
 
-    //队列与交换机绑定并添加路由key（direct和topic模式）
+    //普通队列绑定
     @Bean
-    Binding bindingDirect() {
-        return BindingBuilder.bind(createDirectQueue()).to(directExchange()).with(DIRECT_ROUTINGKEY);
+    public Binding binding(){
+        return BindingBuilder.bind(createQueue()).to(createTopicExchange()).with(ROUTING_KEY);
     }
+
 }

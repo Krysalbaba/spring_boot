@@ -14,7 +14,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.0.88/project?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://192.168.1.88/project?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: 123456
       initial-size: 5
@@ -22,16 +22,22 @@ spring:
       min-idle: 5
       max-wait: 60000
   redis:
-    host: 192.168.0.88
+    host: 192.168.1.88
     port: 6379
     database: 0
   rabbitmq:
-    host: 192.168.0.88
+    host: 192.168.1.88
     port: 5672
     username: guest
     password: guest
     publisher-confirm-type: correlated
     virtual-host: /
+    #开启ACK
+    listener:
+      simple:
+        acknowledge-mode: manual
+      direct:
+        acknowledge-mode: manual
 
 logging:
   config: classpath:logback-spring.xml
