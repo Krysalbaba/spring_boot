@@ -18,14 +18,20 @@ public class DemoController {
 
     @GetMapping("/test1")
     public void  test1() {
-        String msg ="测试direct1 是否可以消费" ;
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_DIRECT_DEMO, RabbitMQConfig.ROUTING_DIRECT_DEMO_ONE,msg);
+        String msg ="测试topic1是否可以消费info" ;
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO,RabbitMQConfig.ROUTING_TOPIC_DEMO_ONE ,msg);
     }
 
     @GetMapping("/test2")
     public void  test2() {
-        String msg ="测试direct2 是否可以消费" ;
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_DIRECT_DEMO, RabbitMQConfig.ROUTING_DIRECT_DEMO_TWO,msg);
+        String msg ="测试topic2是否可以消费warning" ;
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO,RabbitMQConfig.ROUTING_TOPIC_DEMO_TWO,msg);
+    }
+
+    @GetMapping("/test3")
+    public void  test3() {
+        String msg ="测试topic2是否可以消费warning" ;
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO,RabbitMQConfig.ROUTING_TOPIC_DEMO_THREE,msg);
     }
 
     @GetMapping("/dddemo")

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="配置rabbit 延时队列">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="rabbit 主题模式 测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +144,8 @@
       <workItem from="1641476864217" duration="2668000" />
       <workItem from="1641540410149" duration="253000" />
       <workItem from="1641543711037" duration="5794000" />
-      <workItem from="1641624481678" duration="10176000" />
+      <workItem from="1641624481678" duration="10453000" />
+      <workItem from="1641657055214" duration="5308000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -213,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641302728355</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="rabbit 路由模式 测试">
+      <created>1641639194421</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1641639194421</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +243,9 @@
     <MESSAGE value="配置mybatis sql打印" />
     <MESSAGE value="配置rabbit (未完成)" />
     <MESSAGE value="配置rabbit 延时队列" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置rabbit 延时队列" />
+    <MESSAGE value="rabbit 路由模式 测试" />
+    <MESSAGE value="rabbit 主题模式 测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="rabbit 主题模式 测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

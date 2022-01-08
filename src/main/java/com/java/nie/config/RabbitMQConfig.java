@@ -78,8 +78,9 @@ public class RabbitMQConfig {
      */
 
 
-
-    //试用 direct 交换机
+    /**
+     * 路由模式
+     */
     public static final  String QUEUE_DIRECT_DEMO_ONE="queue.direct.demo.one";
     public static final  String QUEUE_DIRECT_DEMO_TWO="queue.direct.demo.one";
     public static final  String EXCHANGE_DIRECT_DEMO="exchange.direct.demo";
@@ -109,5 +110,52 @@ public class RabbitMQConfig {
     @Bean
     public Binding bindDirectTwo(){
         return BindingBuilder.bind(createDirectTwo()).to(createDirectExchangeDemo()).with(ROUTING_DIRECT_DEMO_TWO);
+    }
+
+
+    /**
+     * 订阅模式
+     */
+    public static final String QUEUE_TOPIC_DEMO_ONE="queue.topic.demo.one";
+    public static final String QUEUE_TOPIC_DEMO_TWO="queue.topic.demo.two";
+    public static final String QUEUE_TOPIC_DEMO_THREE="queue.topic.demo.three";
+
+    public static final String EXCHANGE_TOPIC_DEMO="exchange.topic.demo";
+
+    public static final String ROUTING_TOPIC_DEMO_ONE="routing.topic.demo.one";
+    public static final String ROUTING_TOPIC_DEMO_TWO="routing.topic.demo.two";
+    public static final String ROUTING_TOPIC_DEMO_THREE="routing.topic.two";
+
+    @Bean
+    public Queue createTopicQueueOne(){
+        return new Queue(QUEUE_TOPIC_DEMO_ONE,false);
+    }
+    @Bean
+    public Queue createTopicQueueTwo(){
+        return new Queue(QUEUE_TOPIC_DEMO_TWO,false);
+    }
+    @Bean
+    public Queue createTopicQueueThree(){
+        return new Queue(QUEUE_TOPIC_DEMO_THREE,false);
+    }
+
+    @Bean
+    public TopicExchange createTopicExchangeDemo(){
+        return new TopicExchange(EXCHANGE_TOPIC_DEMO);
+    }
+
+    @Bean
+    public Binding bindTopicDemoOne(){
+        return BindingBuilder.bind(createTopicQueueOne()).to(createTopicExchangeDemo()).with("routing.topic.demo.*");
+    }
+
+    @Bean
+    public Binding bindTopicDemoTwo(){
+        return BindingBuilder.bind(createTopicQueueTwo()).to(createTopicExchangeDemo()).with("#.two");
+    }
+
+    @Bean
+    public Binding bindTopicDemoThree(){
+        return BindingBuilder.bind(createTopicQueueThree()).to(createTopicExchangeDemo()).with("routing.topic.*");
     }
 }
