@@ -14,15 +14,26 @@ import javax.annotation.Resource;
 public class DemoController {
 
     @Resource
-    private RabbitTemplate rabbitTemplate ;
+    private RabbitTemplate rabbitTemplate;
 
+    @GetMapping("/test1")
+    public void  test1() {
+        String msg ="测试direct1 是否可以消费" ;
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_DIRECT_DEMO, RabbitMQConfig.ROUTING_DIRECT_DEMO_ONE,msg);
+    }
+
+    @GetMapping("/test2")
+    public void  test2() {
+        String msg ="测试direct2 是否可以消费" ;
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_DIRECT_DEMO, RabbitMQConfig.ROUTING_DIRECT_DEMO_TWO,msg);
+    }
 
     @GetMapping("/dddemo")
-    public void  demo(String id ){
+    public void demo(String id) {
         //指定延时队列交换机   延时队列路由  和  设置消息过期时间
-        rabbitTemplate.convertAndSend(RabbitMQConfig.DIRECT_DELAY_EXCHANGE_NAME,RabbitMQConfig.ROUTING_KEY_DELAY,id,mes->{
-            mes.getMessageProperties().setExpiration(1000*20+"");
-            return mes  ;
+        rabbitTemplate.convertAndSend(RabbitMQConfig.DIRECT_DELAY_EXCHANGE_NAME, RabbitMQConfig.ROUTING_KEY_DELAY, id, mes -> {
+            mes.getMessageProperties().setExpiration(1000 * 20 + "");
+            return mes;
         });
     }
 

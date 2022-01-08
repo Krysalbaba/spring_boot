@@ -65,7 +65,7 @@ public class TUserController {
             wrapper.eq(TUser::getLoginName, loginName);
             wrapper.eq(TUser::getPassword, password);
             TUser tUser = itUserService.getOne(wrapper, false);
-            if (ObjectUtils.isEmpty(tUser)) {
+            if (!ObjectUtils.isEmpty(tUser)) {
                 return ResultGenerator.genSuccessResult();
             }
         }

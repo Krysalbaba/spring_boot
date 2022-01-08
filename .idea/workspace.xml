@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="配置rabbit (未完成)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQAckConfig.java" afterDir="false" />
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="配置rabbit 延时队列">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/NieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/NieApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/docker/Dockerfile" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/demo_project/SpringBoot_Shiro_JWT_Redis-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -76,22 +78,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.NieApplication">
-    <configuration name="DemoController.demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring_boot" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.java.nie.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.java.nie.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.java.nie.controller.DemoController" />
-      <option name="METHOD_NAME" value="demo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="NieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring_boot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.java.nie.NieApplication" />
@@ -110,7 +96,7 @@
             <list>
               <DockerPortBindingImpl>
                 <option name="containerPort" value="9090" />
-                <option name="hostIp" value="192.168.0.88" />
+                <option name="hostIp" value="192.168.1.88" />
                 <option name="hostPort" value="9090" />
               </DockerPortBindingImpl>
             </list>
@@ -121,12 +107,10 @@
     </configuration>
     <list>
       <item itemvalue="Docker.Docker Image" />
-      <item itemvalue="JUnit.DemoController.demo" />
       <item itemvalue="Spring Boot.NieApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DemoController.demo" />
         <item itemvalue="Docker.Docker Image" />
       </list>
     </recent_temporary>
@@ -157,7 +141,14 @@
       <workItem from="1640912159239" duration="2599000" />
       <workItem from="1641208767014" duration="712000" />
       <workItem from="1641257666127" duration="3313000" />
-      <workItem from="1641299396360" duration="3144000" />
+      <workItem from="1641299396360" duration="3358000" />
+      <workItem from="1641370687277" duration="168000" />
+      <workItem from="1641436444645" duration="4384000" />
+      <workItem from="1641465063070" duration="4261000" />
+      <workItem from="1641476864217" duration="2668000" />
+      <workItem from="1641540410149" duration="253000" />
+      <workItem from="1641543711037" duration="5794000" />
+      <workItem from="1641624481678" duration="10176000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -215,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641258418096</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="配置rabbit 延时队列">
+      <created>1641302728355</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1641302728355</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +238,8 @@
     <MESSAGE value="集成spring 参数校验框架 并修改redis不支持localdatetime问题" />
     <MESSAGE value="配置mybatis sql打印" />
     <MESSAGE value="配置rabbit (未完成)" />
-    <option name="LAST_COMMIT_MESSAGE" value="配置rabbit (未完成)" />
+    <MESSAGE value="配置rabbit 延时队列" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置rabbit 延时队列" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

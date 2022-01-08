@@ -10,6 +10,12 @@ import java.util.Map;
 
 @Configuration
 public class RabbitMQConfig {
+
+    /**
+     *  延时队列创建  开始
+     */
+
+
     // 普通队列名
     public static final String QUEUE_NAME = "queue.name";
     // 普通交换机名
@@ -66,4 +72,42 @@ public class RabbitMQConfig {
         return BindingBuilder.bind(createQueue()).to(createTopicExchange()).with(ROUTING_KEY);
     }
 
+
+    /**
+     *  延时队列创建 结束
+     */
+
+
+
+    //试用 direct 交换机
+    public static final  String QUEUE_DIRECT_DEMO_ONE="queue.direct.demo.one";
+    public static final  String QUEUE_DIRECT_DEMO_TWO="queue.direct.demo.one";
+    public static final  String EXCHANGE_DIRECT_DEMO="exchange.direct.demo";
+    public static final  String ROUTING_DIRECT_DEMO_ONE="routing.direct.demo.one";
+    public static final  String ROUTING_DIRECT_DEMO_TWO="routing.direct.demo.two";
+
+    @Bean
+    public Queue createDirectOne(){
+        return new Queue(QUEUE_DIRECT_DEMO_ONE,false);
+    }
+
+    @Bean
+    public Queue createDirectTwo(){
+        return new Queue(QUEUE_DIRECT_DEMO_TWO,false);
+    }
+
+    @Bean
+    public DirectExchange createDirectExchangeDemo(){
+        return new DirectExchange(EXCHANGE_DIRECT_DEMO);
+    }
+
+    @Bean
+    public Binding bindDirectOne(){
+        return BindingBuilder.bind(createDirectOne()).to(createDirectExchangeDemo()).with(ROUTING_DIRECT_DEMO_ONE);
+    }
+
+    @Bean
+    public Binding bindDirectTwo(){
+        return BindingBuilder.bind(createDirectTwo()).to(createDirectExchangeDemo()).with(ROUTING_DIRECT_DEMO_TWO);
+    }
 }
