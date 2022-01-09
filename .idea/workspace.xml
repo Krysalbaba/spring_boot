@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="rabbit 主题模式 测试">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" afterDir="false" />
-    </list>
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="rabbit 首部交换机 测试(未完成)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +140,7 @@
       <workItem from="1641543711037" duration="5794000" />
       <workItem from="1641624481678" duration="10453000" />
       <workItem from="1641657055214" duration="5341000" />
-      <workItem from="1641721705191" duration="5625000" />
+      <workItem from="1641721705191" duration="6422000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -224,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641662739317</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="rabbit 首部交换机 测试(未完成)">
+      <created>1641732659702</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1641732659702</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +254,8 @@
     <MESSAGE value="配置rabbit 延时队列" />
     <MESSAGE value="rabbit 路由模式 测试" />
     <MESSAGE value="rabbit 主题模式 测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="rabbit 主题模式 测试" />
+    <MESSAGE value="rabbit 首部交换机 测试(未完成)" />
+    <option name="LAST_COMMIT_MESSAGE" value="rabbit 首部交换机 测试(未完成)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
