@@ -2,6 +2,8 @@ package com.java.nie.controller;
 
 
 import com.java.nie.config.RabbitMQConfig;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +35,18 @@ public class DemoController {
         String msg ="测试topic2是否可以消费warning" ;
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO,RabbitMQConfig.ROUTING_TOPIC_DEMO_THREE,msg);
     }
+
+    @GetMapping("/test4")
+    public void  test4() {
+        String msg ="测试headers 是否可以消费4" ;
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_HEADERS_DEMO,null,msg,message -> {
+            message.getMessageProperties().setHeader("age",20);
+            message.getMessageProperties().setHeader("isDel",true);
+            message.getMessageProperties().setHeader("sex",1);
+            return message;
+        });
+    }
+
 
     @GetMapping("/dddemo")
     public void demo(String id) {

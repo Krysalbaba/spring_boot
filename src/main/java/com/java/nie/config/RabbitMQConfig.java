@@ -114,7 +114,7 @@ public class RabbitMQConfig {
 
 
     /**
-     * 订阅模式
+     * 主题模式
      */
     public static final String QUEUE_TOPIC_DEMO_ONE="queue.topic.demo.one";
     public static final String QUEUE_TOPIC_DEMO_TWO="queue.topic.demo.two";
@@ -158,4 +158,39 @@ public class RabbitMQConfig {
     public Binding bindTopicDemoThree(){
         return BindingBuilder.bind(createTopicQueueThree()).to(createTopicExchangeDemo()).with("routing.topic.*");
     }
+
+
+    /**
+     * 首部交换机 demo
+     */
+    public static final String QUEUE_HEADERS_DEMO_ONE="queue.headers.demo.one";
+    public static final String QUEUE_HEADERS_DEMO_TWO="queue.headers.demo.two";
+
+    public static final String EXCHANGE_HEADERS_DEMO="exchange.headers.demo";
+
+    @Bean
+    public Queue createHeadersQueueOne(){
+        return new Queue(QUEUE_HEADERS_DEMO_ONE,false);
+    }
+
+    @Bean
+    public Queue createHeadersQueueTwo(){
+        return new Queue(QUEUE_HEADERS_DEMO_TWO,false);
+    }
+
+    @Bean
+    public HeadersExchange createHeadersExchange(){
+        return new HeadersExchange(EXCHANGE_HEADERS_DEMO);
+    }
+
+    @Bean
+    public Binding bindingHeadersOne(){
+        return BindingBuilder.bind(createHeadersQueueOne()).to(createHeadersExchange()).where("demo").exists();
+    }
+
+    @Bean
+    public Binding bindingHeadersTwo(){
+        return BindingBuilder.bind(createHeadersQueueTwo()).to(createHeadersExchange()).whereAny("age","isDel").exist();
+    }
+
 }

@@ -111,4 +111,30 @@ public class RabbitMQListener {
         }
     }
 
+
+    @RabbitListener(queues = {RabbitMQConfig.QUEUE_HEADERS_DEMO_ONE})
+    public void headerConsumerOne(Message message, Channel channel,Object params){
+        logger.info("params1:{}",params);
+        try{
+            //第二个参数--- true:批量接收数据，false:逐条接收数据
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @RabbitListener(queues = {RabbitMQConfig.QUEUE_HEADERS_DEMO_TWO})
+    public void headerConsumerTwo(Message message, Channel channel,Object params){
+        logger.info("params2:{}",params);
+        try{
+            //第二个参数--- true:批量接收数据，false:逐条接收数据
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
