@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="rabbit 首部交换机 测试(未完成)">
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="github权限测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +150,9 @@
       <workItem from="1641776401809" duration="653000" />
       <workItem from="1641793601858" duration="44000" />
       <workItem from="1641793891104" duration="358000" />
+      <workItem from="1641867312715" duration="592000" />
+      <workItem from="1641991457927" duration="2088000" />
+      <workItem from="1641995498986" duration="412000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -238,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641732671584</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="github权限测试">
+      <created>1641867353982</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1641867353982</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +281,8 @@
     <MESSAGE value="rabbit 路由模式 测试" />
     <MESSAGE value="rabbit 主题模式 测试" />
     <MESSAGE value="rabbit 首部交换机 测试(未完成)" />
-    <option name="LAST_COMMIT_MESSAGE" value="rabbit 首部交换机 测试(未完成)" />
+    <MESSAGE value="github权限测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="github权限测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -13,6 +13,12 @@ redis :
 
 ps : redis 不支持 localdatetime 时间格式 需要在配置文件中格式化 或者通过注解的形式解决问题
 
+数据类型 :
+    String : 正常存储
+    Set    : 无序集合  key值相同 可以一直向当前key添加数据  如果数据重复则覆盖 返回0 反之 返回1
+    Hash   : 相当于java 中的map  可以向相同key中添加数据 一次添加一个map 或者 put一个(key,value)
+    List   : 可以选择向列表头部或者尾部添加数据 如果添加在链表中会影响效率 添加在首尾效率更快
+             取值可以用key及 index 取值    返回列表中 下标为 index 的值
 
 rabbit :
     1.延时队列
