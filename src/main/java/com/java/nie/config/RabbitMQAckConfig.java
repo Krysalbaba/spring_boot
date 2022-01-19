@@ -11,12 +11,12 @@ import javax.annotation.PostConstruct;
 
 
 @Configuration
-public class RabbitMQAckConfig implements RabbitTemplate.ConfirmCallback{
+public class RabbitMQAckConfig implements RabbitTemplate.ConfirmCallback {
 
     private final static Logger log = LoggerFactory.getLogger(RabbitMQAckConfig.class);
 
     @Autowired
-    private RabbitTemplate rabbitTemplate ;
+    private RabbitTemplate rabbitTemplate;
 
     @PostConstruct
     public void init() {

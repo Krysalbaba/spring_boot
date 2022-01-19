@@ -11,13 +11,13 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     //新增时默认填充新增和修改时间
     public void insertFill(MetaObject metaObject) {
-        this.setFieldValByName("gmtCreate", LocalDateTime.now(),metaObject);
-        this.setFieldValByName("gmtUpdate", LocalDateTime.now(),metaObject);
+        this.setFieldValByName("gmtCreate", LocalDateTime.now(), metaObject);
+        this.setFieldValByName("gmtUpdate", LocalDateTime.now(), metaObject);
     }
 
     @Override
     //修改操作时默认填充修改时间
     public void updateFill(MetaObject metaObject) {
-        this.setFieldValByName("gmtUpdate", LocalDateTime.now(),metaObject);
+        this.setFieldValByName("gmtUpdate", LocalDateTime.now(), metaObject);
     }
 }

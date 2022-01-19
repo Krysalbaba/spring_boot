@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
 public class TUserController {
 
     //redis token 头部
-    private String token="nie";
+    private String token = "nie";
 
     @Autowired
     private ITUserService itUserService;
@@ -77,8 +77,8 @@ public class TUserController {
         //将数据设置为 未删除
         user.setIsDel(0);
         itUserService.save(user);
-        String idToken=token+user.getId();
-        redisService.set(idToken,user,3600);
+        String idToken = token + user.getId();
+        redisService.set(idToken, user, 3600);
         return ResultGenerator.genSuccessResult();
     }
 

@@ -3,8 +3,6 @@ package com.java.nie.controller;
 
 import com.java.nie.config.RabbitMQConfig;
 import com.java.nie.config.RedisService;
-import org.springframework.amqp.core.Message;
-import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,30 +24,30 @@ public class DemoController {
     private RedisService redisService;
 
     @GetMapping("/test1")
-    public void  test1() {
-        String msg ="测试topic1是否可以消费info" ;
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO,RabbitMQConfig.ROUTING_TOPIC_DEMO_ONE ,msg);
+    public void test1() {
+        String msg = "测试topic1是否可以消费info";
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO, RabbitMQConfig.ROUTING_TOPIC_DEMO_ONE, msg);
     }
 
     @GetMapping("/test2")
-    public void  test2() {
-        String msg ="测试topic2是否可以消费warning" ;
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO,RabbitMQConfig.ROUTING_TOPIC_DEMO_TWO,msg);
+    public void test2() {
+        String msg = "测试topic2是否可以消费warning";
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO, RabbitMQConfig.ROUTING_TOPIC_DEMO_TWO, msg);
     }
 
     @GetMapping("/test3")
-    public void  test3() {
-        String msg ="测试topic2是否可以消费warning" ;
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO,RabbitMQConfig.ROUTING_TOPIC_DEMO_THREE,msg);
+    public void test3() {
+        String msg = "测试topic2是否可以消费warning";
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_TOPIC_DEMO, RabbitMQConfig.ROUTING_TOPIC_DEMO_THREE, msg);
     }
 
     @GetMapping("/test4")
-    public void  test4() {
-        String msg ="测试headers 是否可以消费4" ;
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_HEADERS_DEMO,null,msg,message -> {
-            message.getMessageProperties().setHeader("age",20);
-            message.getMessageProperties().setHeader("isDel",true);
-            message.getMessageProperties().setHeader("sex",1);
+    public void test4() {
+        String msg = "测试headers 是否可以消费4";
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_HEADERS_DEMO, null, msg, message -> {
+            message.getMessageProperties().setHeader("age", 20);
+            message.getMessageProperties().setHeader("isDel", true);
+            message.getMessageProperties().setHeader("sex", 1);
             return message;
         });
     }
@@ -66,24 +64,22 @@ public class DemoController {
         /**
          * redis 测试
          */
-        Map<String,Object> map =new HashMap<>();
-        map.put("age",20);
-        map.put("sex","男");
-        redisService.hmset("set",map);
-        redisService.hset("set","demo","test");
+        long expire = redisService.getExpire("DS2022:mail");
+        System.err.println("剩余时间为-----------------》" + expire);
 
     }
 
-
-    @GetMapping("/get")
-    public void get() {
-        Map<Object, Object> demo = redisService.hmget("set");
-        System.err.println("demo----------->"+demo);
-        Object age = redisService.hget("demo", "age");
-        System.err.println("age----------->"+age);
-        Object sex = redisService.hget("demo", "sex");
-        System.err.println("sex----------->"+sex);
-
+    @GetMapping("/test")
+    public void test() {
+        Object hget = redisService.hget("mail", "kuwoCount");
+        Object hget1 = redisService.hget("demo", "kuwoCount");
+        System.err.println("hget-----------------》" + hget);
+        System.err.println("===============================================");
+        System.err.println("hget1-----------------》" + hget1);
     }
 
+    @GetMapping("/set")
+    public void set(Boolean isSend) {
+        redisService.hset("DS2022:cache:config", "isSend", isSend);
+    }
 }

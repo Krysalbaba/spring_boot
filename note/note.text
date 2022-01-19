@@ -8,17 +8,21 @@ docker :
 ps : 更改完配置后  打包之前在idea里重新连接 docker容器
 
 redis :
-1 集成redis后 先将redis自带的序列化方法换成Jackson2JsonRedisSerializer序列方法
-2 根据常用程度考虑是否编写工具类
+    1 集成redis后 先将redis自带的序列化方法换成Jackson2JsonRedisSerializer序列方法
+    2 根据常用程度考虑是否编写工具类
 
-ps : redis 不支持 localdatetime 时间格式 需要在配置文件中格式化 或者通过注解的形式解决问题
+    ps : redis 不支持 localdatetime 时间格式 需要在配置文件中格式化 或者通过注解的形式解决问题
 
-数据类型 :
-    String : 正常存储
-    Set    : 无序集合  key值相同 可以一直向当前key添加数据  如果数据重复则覆盖 返回0 反之 返回1
-    Hash   : 相当于java 中的map  可以向相同key中添加数据 一次添加一个map 或者 put一个(key,value)
-    List   : 可以选择向列表头部或者尾部添加数据 如果添加在链表中会影响效率 添加在首尾效率更快
-             取值可以用key及 index 取值    返回列表中 下标为 index 的值
+    数据类型 :
+        String : 正常存储
+        Set    : 无序集合  key值相同 可以一直向当前key添加数据  如果数据重复则覆盖 返回0 反之 返回1
+        Hash   : 相当于java 中的map  可以向相同key中添加数据 一次添加一个map 或者 put一个(key,value)
+        List   : 可以选择向列表头部或者尾部添加数据 如果添加在链表中会影响效率 添加在首尾效率更快
+                 取值可以用key及 index 取值    返回列表中 下标为 index 的值
+
+    ps : 设置数据类型过期时间时 : String类型会覆盖掉之前过期时间(修改时不设置时间会默认没有过期时间);
+                               Hash类型修改单个item时不设置过期时间 会不去修改时间 设置过期时间会覆盖之前的时间
+
 
 rabbit :
     1.延时队列

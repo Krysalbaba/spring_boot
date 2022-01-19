@@ -18,7 +18,7 @@ public class CommonResult<T> {
     @ApiModelProperty("返回的数据")
     private T data;
 
-    public CommonResult(){
+    public CommonResult() {
 
     }
 

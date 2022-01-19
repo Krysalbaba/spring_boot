@@ -12,14 +12,14 @@ import org.springframework.cache.annotation.EnableCaching;
 @EnableCaching
 public class NieApplication {
 
-	private final static Logger logger = LoggerFactory.getLogger(NieApplication.class);
+    private final static Logger logger = LoggerFactory.getLogger(NieApplication.class);
 
-	public static void main(String[] args) {
-		try {
-			SpringApplication.run(NieApplication.class, args);
-			logger.info("启动成功！！！！！！！！！！");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    public static void main(String[] args) {
+        try {
+            SpringApplication.run(NieApplication.class, args);
+            logger.info("启动成功！！！！！！！！！！");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

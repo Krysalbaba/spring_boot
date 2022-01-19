@@ -1,4 +1,5 @@
 package com.java.nie.bean;
+
 import org.springframework.util.StringUtils;
 
 public class ResultGenerator {
@@ -31,7 +32,6 @@ public class ResultGenerator {
         result.setData(data);
         return result;
     }
-
 
 
     public static CommonResult genFailResult(String message) {

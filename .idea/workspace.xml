@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="github权限测试">
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="redis 基本类型测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -25,6 +25,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" root0="FORCE_HIGHLIGHTING" />
@@ -152,7 +160,19 @@
       <workItem from="1641793891104" duration="358000" />
       <workItem from="1641867312715" duration="592000" />
       <workItem from="1641991457927" duration="2088000" />
-      <workItem from="1641995498986" duration="412000" />
+      <workItem from="1641995498986" duration="492000" />
+      <workItem from="1642035065044" duration="237000" />
+      <workItem from="1642036313257" duration="629000" />
+      <workItem from="1642056228797" duration="491000" />
+      <workItem from="1642059634328" duration="3661000" />
+      <workItem from="1642074053174" duration="639000" />
+      <workItem from="1642077044631" duration="6000" />
+      <workItem from="1642077489896" duration="2016000" />
+      <workItem from="1642080114971" duration="145000" />
+      <workItem from="1642122451082" duration="4995000" />
+      <workItem from="1642406371992" duration="3903000" />
+      <workItem from="1642467653447" duration="633000" />
+      <workItem from="1642562450375" duration="645000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -252,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641867353982</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="redis 基本类型测试">
+      <created>1641995941559</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1641995941559</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +309,8 @@
     <MESSAGE value="rabbit 主题模式 测试" />
     <MESSAGE value="rabbit 首部交换机 测试(未完成)" />
     <MESSAGE value="github权限测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="github权限测试" />
+    <MESSAGE value="redis 基本类型测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="redis 基本类型测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
