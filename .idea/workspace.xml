@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="redis 基本类型测试">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/AsyncController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/AsyncService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/impl/AsyncServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/NieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/NieApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="异步测试" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +176,7 @@
       <workItem from="1644153389756" duration="4889000" />
       <workItem from="1645858046321" duration="18000" />
       <workItem from="1648430670568" duration="2318000" />
-      <workItem from="1648433030831" duration="322000" />
+      <workItem from="1648433030831" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -296,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642575391477</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="异步测试">
+      <created>1648433527343</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1648433527343</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +328,8 @@
     <MESSAGE value="rabbit 首部交换机 测试(未完成)" />
     <MESSAGE value="github权限测试" />
     <MESSAGE value="redis 基本类型测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="redis 基本类型测试" />
+    <MESSAGE value="异步测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="异步测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

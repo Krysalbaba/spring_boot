@@ -75,3 +75,8 @@ rabbit :
 mybatis plus :
 ps : save 方法后会修改你保存的实体类 例如实体类getId可以直接拿到id的值
      但是并没有查询数据库 数据库中设为默认的值get出来依然为null
+
+Async(异步):
+    1:主方法无需加@Async 注解
+    2:调用方法需要加入@Async注解 并且必须为单独的一个类
+    3:使用异步时需在启动类开启@EnableAsync 注解
