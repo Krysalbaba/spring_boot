@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="redis 基本类型测试">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/AsyncController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/AsyncService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/impl/AsyncServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/NieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/NieApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -35,9 +36,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/java/nie/config/RabbitMQListener.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/java/nie/controller/DemoController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -67,7 +68,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -173,6 +174,15 @@
       <workItem from="1642406371992" duration="3903000" />
       <workItem from="1642467653447" duration="633000" />
       <workItem from="1642562450375" duration="645000" />
+      <workItem from="1642575119140" duration="1064000" />
+      <workItem from="1642580387958" duration="717000" />
+      <workItem from="1642584054048" duration="2522000" />
+      <workItem from="1642986770889" duration="1065000" />
+      <workItem from="1643963371251" duration="2205000" />
+      <workItem from="1644153389756" duration="4889000" />
+      <workItem from="1645858046321" duration="18000" />
+      <workItem from="1648430670568" duration="2318000" />
+      <workItem from="1648433030831" duration="322000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -279,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641995941559</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="redis 基本类型测试">
+      <created>1642575391477</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1642575391477</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,5 +339,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -6,10 +6,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @MapperScan("com.java.nie.mapper")
 @EnableCaching
+@EnableAsync
 public class NieApplication {
 
     private final static Logger logger = LoggerFactory.getLogger(NieApplication.class);
