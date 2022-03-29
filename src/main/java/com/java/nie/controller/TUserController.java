@@ -4,6 +4,8 @@ package com.java.nie.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.java.nie.bean.CommonResult;
 import com.java.nie.bean.ResultGenerator;
+import com.java.nie.bean.field.annotation.DemoAnnotation;
+import com.java.nie.bean.field.annotation.DemoOneAnnotation;
 import com.java.nie.domain.TUser;
 import com.java.nie.service.ITUserService;
 import com.java.nie.config.RedisService;
@@ -56,6 +58,27 @@ public class TUserController {
     }
 
 
+    @PostMapping("/register")
+    @DemoAnnotation
+    public CommonResult register(@Validated @RequestBody TUser user) {
+        //将数据设置为 未删除
+        user.setIsDel(0);
+        itUserService.save(user);
+        String idToken = token + user.getId();
+        redisService.set(idToken, user, 3600);
+        return ResultGenerator.genSuccessResult();
+    }
+
+
+    @PostMapping("/aspect")
+    @DemoAnnotation
+    public void aspect(@RequestBody TUser user) {
+        System.out.println("执行方法区----------------------------");
+        if (ObjectUtils.isEmpty(user.getIsDel())){
+            throw new RuntimeException();
+        }
+    }
+
     @PostMapping("/login")
     public CommonResult login(@RequestBody TUser user) {
         String loginName = user.getLoginName();
@@ -70,16 +93,6 @@ public class TUserController {
             }
         }
         return ResultGenerator.genFailResult("登录失败！");
-    }
-
-    @PostMapping("/register")
-    public CommonResult register(@Validated @RequestBody TUser user) {
-        //将数据设置为 未删除
-        user.setIsDel(0);
-        itUserService.save(user);
-        String idToken = token + user.getId();
-        redisService.set(idToken, user, 3600);
-        return ResultGenerator.genSuccessResult();
     }
 
 }

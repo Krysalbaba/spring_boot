@@ -78,5 +78,25 @@ ps : save 方法后会修改你保存的实体类 例如实体类getId可以直�
 
 Async(异步):
     1:主方法无需加@Async 注解
-    2:调用方法需要加入@Async注解 并且必须为单独的一个类
+    2:调用方法需要加入@Async注解 主方法不能和调用方法在同一个类
     3:使用异步时需在启动类开启@EnableAsync 注解
+
+
+Aspect(切面):
+    1:导入aop 依赖
+    2:注解上使用@Documented,@Target,@Retention 并指定属性
+      ps: @Documented 起标识作用 可以使在javaDoc中生成
+          @Target 作用域 例如@Target(ElementType.METHOD) method指作用在方法上
+          @Retention 注解的生命周期 例如@Retention(RetentionPolicy.RUNTIME)  RUNTIME代表始终有效
+    3:定义切面类,类上需要加上@Aspect 注解 和@Component注解注入spring容器中  @Order(1)注解作用是定义切面执行顺序 数值越小执行顺序越高
+      @Pointcut("@annotation(com.java.xxx)") 标识切点方法并指定注解路径
+      @Around("切点方法名")  入参必须以ProceedingJoinPoint为第一个参数 必须有proceedingJoinPoint.proceed() 走向下一个方法
+      @Before("切点方法名")  入参是JoinPoint 修改其中参数  方法结束后会自动带给下一方法
+    4:(注解)切面执行顺序
+      方法正常: @Around->@Before->请求方法->@AfterReturning->@After->@Around
+      方法异常: @Around->@Before->请求方法->@AfterThrowing->@After
+      多个切面执行顺序:@Around->@Before
+                     ->@Around->@Before->请求方法->@AfterReturning->@After->@Around
+                     ->@AfterReturning->@After->@Around
+      ps:多个切面执行顺序 可以理解为 是将后执行的切面当作一个方法区
+
