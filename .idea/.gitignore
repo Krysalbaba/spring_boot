@@ -7,7 +7,7 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 # 忽略日志文件
-/log/
+/logs/
 /target/
 *.class
 workspace.xml
