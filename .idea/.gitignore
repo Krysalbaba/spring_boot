@@ -9,3 +9,4 @@
 # 忽略文件
 workspace.xml
 *.class
+*.log
