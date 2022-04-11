@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="切面注解 笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mybatisPlus/enums/SexEnum.java" afterDir="false" />
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="mp 数据库对应枚举  逻辑删除测试">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/domain/TUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/domain/TUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/mapper/TUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/mapper/TUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/service/ITUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/ITUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/service/impl/TUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/impl/TUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mybatisPlus/MybatisPlusGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mybatisPlus/MybatisPlusGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TUserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +78,13 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.java.nie.config" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.NieApplication">
     <configuration name="MybatisPlusGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -209,7 +205,7 @@
       <workItem from="1648532680657" duration="13196000" />
       <workItem from="1648619484596" duration="4465000" />
       <workItem from="1648688953079" duration="1507000" />
-      <workItem from="1649659906023" duration="7711000" />
+      <workItem from="1649659906023" duration="8367000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -344,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648546624845</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="mp 数据库对应枚举  逻辑删除测试">
+      <created>1649667925484</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1649667925484</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +381,8 @@
     <MESSAGE value="异步测试" />
     <MESSAGE value="Async 笔记" />
     <MESSAGE value="切面注解 笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="切面注解 笔记" />
+    <MESSAGE value="mp 数据库对应枚举  逻辑删除测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="mp 数据库对应枚举  逻辑删除测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
