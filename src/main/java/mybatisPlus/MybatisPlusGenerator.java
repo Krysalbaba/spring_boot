@@ -9,7 +9,7 @@ public class MybatisPlusGenerator {
 
 
     public static void main(String[] args) {
-        FastAutoGenerator.create("jdbc:mysql://192.168.1.88:3306/project?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8", "root", "123456")
+        FastAutoGenerator.create("jdbc:mysql://47.101.201.211:3306/venus_mall?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8", "root", "123456")
                 .globalConfig(builder -> {
                     builder.author("nie") // 设置作者
                             .enableSwagger() // 开启 swagger 模式

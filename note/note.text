@@ -76,6 +76,10 @@ mybatis plus :
 ps : save 方法后会修改你保存的实体类 例如实体类getId可以直接拿到id的值
      但是并没有查询数据库 数据库中设为默认的值get出来依然为null
 
+     逻辑删除:yml中配置logic-delete-value和logic-not-delete-value的值,实体类字段加上@TableLogic注解
+     数据库字段对应枚举:yml中配置type-enums-package属性并指定扫描的包 枚举类实现IEnum<Integer>  实体类字段类型对应枚举类 枚举类中需要展示的字段加上@JsonValue注解
+
+
 Async(异步):
     1:主方法无需加@Async 注解
     2:调用方法需要加入@Async注解 主方法不能和调用方法在同一个类

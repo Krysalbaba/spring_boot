@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="Async 笔记">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/bean/field/annotation/DemoOneAnnotation.java" afterDir="false" />
+    <list default="true" id="4ac1bf8d-22b5-4673-aaef-adee85019c0c" name="Changes" comment="切面注解 笔记">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mybatisPlus/enums/SexEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/note/note.text" beforeDir="false" afterPath="$PROJECT_DIR$/note/note.text" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/domain/TUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/domain/TUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/mapper/TUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/mapper/TUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/service/ITUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/ITUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/java/nie/service/impl/TUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/java/nie/service/impl/TUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mybatisPlus/MybatisPlusGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mybatisPlus/MybatisPlusGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TUserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="JavaFXApplication" />
         <option value="Class" />
       </list>
     </option>
@@ -63,7 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/demo_project/SpringBoot_Shiro_JWT_Redis-master" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/mybatisplus-spring-boot-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -83,6 +91,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.NieApplication">
+    <configuration name="MybatisPlusGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mybatisPlus.MybatisPlusGenerator" />
+      <module name="spring_boot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mybatisPlus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring_boot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.java.nie.NieApplication" />
@@ -111,11 +132,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.MybatisPlusGenerator" />
       <item itemvalue="Docker.Docker Image" />
       <item itemvalue="Spring Boot.NieApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MybatisPlusGenerator" />
         <item itemvalue="Docker.Docker Image" />
       </list>
     </recent_temporary>
@@ -183,7 +206,10 @@
       <workItem from="1645858046321" duration="18000" />
       <workItem from="1648430670568" duration="2318000" />
       <workItem from="1648433030831" duration="869000" />
-      <workItem from="1648532680657" duration="12880000" />
+      <workItem from="1648532680657" duration="13196000" />
+      <workItem from="1648619484596" duration="4465000" />
+      <workItem from="1648688953079" duration="1507000" />
+      <workItem from="1649659906023" duration="7711000" />
     </task>
     <task id="LOCAL-00001" summary="demo">
       <created>1640591229403</created>
@@ -311,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648433874943</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="切面注解 笔记">
+      <created>1648546624845</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1648546624845</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,9 +377,19 @@
     <MESSAGE value="redis 基本类型测试" />
     <MESSAGE value="异步测试" />
     <MESSAGE value="Async 笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="Async 笔记" />
+    <MESSAGE value="切面注解 笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="切面注解 笔记" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/java/nie/controller/TUserController.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="((MethodSignatureImpl)signature).this$0" custom="org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.MethodSignatureImpl" />

@@ -7,8 +7,11 @@ mybatis-plus:
   configuration:
     # sql 语句打印
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-
+  global-config:
+    db-config:
+      logic-delete-value: 1  #已删除
+      logic-not-delete-value: 0  #未删除
+  type-enums-package: mybatisPlus.enums #配置枚举包扫描
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

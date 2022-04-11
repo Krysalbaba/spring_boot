@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import mybatisPlus.enums.SexEnum;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -52,7 +53,11 @@ public class TUser implements Serializable {
     @NotNull
     private String password;
 
+    @ApiModelProperty("性别")
+    private SexEnum sex ;
+
     @ApiModelProperty("是否删除(0:否, 1:是)")
+    @TableLogic
     private Integer isDel;
 
     @ApiModelProperty("创建时间")

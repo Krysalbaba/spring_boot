@@ -59,10 +59,8 @@ public class TUserController {
 
 
     @PostMapping("/register")
-    @DemoAnnotation
     public CommonResult register(@Validated @RequestBody TUser user) {
         //将数据设置为 未删除
-        user.setIsDel(0);
         itUserService.save(user);
         String idToken = token + user.getId();
         redisService.set(idToken, user, 3600);
@@ -94,6 +92,20 @@ public class TUserController {
         }
         return ResultGenerator.genFailResult("登录失败！");
     }
+
+
+    @PostMapping("/deleteById/{id}")
+    public CommonResult delete(@PathVariable(value = "id")String id){
+        itUserService.removeById(id);
+        return ResultGenerator.genSuccessResult();
+    }
+
+    @PostMapping("/selectList")
+    public CommonResult selectList(@RequestBody TUser user){
+        List<TUser> list = itUserService.list();
+        return ResultGenerator.genSuccessResult(list);
+    }
+
 
 }
 
