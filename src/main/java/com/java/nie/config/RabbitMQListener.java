@@ -132,4 +132,28 @@ public class RabbitMQListener {
         }
     }
 
+
+    @RabbitListener(queues = {RabbitMQConfig.QUEUE_FANOUT_DEMO_ONE})
+    public void fanoutConsumerOne(Message message, Channel channel, Object params) {
+        logger.info("fanoutParams1:{}", params);
+        try {
+            //第二个参数--- true:批量接收数据，false:逐条接收数据
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @RabbitListener(queues = {RabbitMQConfig.QUEUE_FANOUT_DEMO_TWO})
+    public void fanoutConsumerTwo(Message message, Channel channel, Object params) {
+        logger.info("fanoutParams2:{}", params);
+        try {
+            //第二个参数--- true:批量接收数据，false:逐条接收数据
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -195,4 +195,38 @@ public class RabbitMQConfig {
         return BindingBuilder.bind(createHeadersQueueTwo()).to(createHeadersExchange()).whereAny("age", "isDel").exist();
     }
 
+    /**
+     *  广播交换机
+     */
+    public static final String QUEUE_FANOUT_DEMO_ONE = "queue.fanout.demo.one";
+
+    public static final String QUEUE_FANOUT_DEMO_TWO = "queue.fanout.demo.two";
+
+    public static final String EXCHANGE_FANOUT_DEMO = "exchange.fanout.demo";
+
+
+    @Bean
+    public Queue createFanoutQueueOne() {
+        return new Queue(QUEUE_FANOUT_DEMO_ONE, false);
+    }
+
+    @Bean
+    public Queue createFanoutQueueTwo() {
+        return new Queue(QUEUE_FANOUT_DEMO_TWO, false);
+    }
+
+    @Bean
+    public FanoutExchange createFanoutExchange() {
+        return new FanoutExchange(EXCHANGE_FANOUT_DEMO);
+    }
+
+    @Bean
+    public Binding bindingFanoutOne() {
+        return BindingBuilder.bind(createFanoutQueueOne()).to(createFanoutExchange());
+    }
+
+    @Bean
+    public Binding bindingFanoutTwo() {
+        return BindingBuilder.bind(createFanoutQueueTwo()).to(createFanoutExchange());
+    }
 }
