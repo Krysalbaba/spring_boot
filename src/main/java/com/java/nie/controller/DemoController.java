@@ -52,6 +52,11 @@ public class DemoController {
         });
     }
 
+    @GetMapping("/test5")
+    public void test5() {
+        String msg = "测试fanout是否可以消费";
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_FANOUT_DEMO,"", msg);
+    }
 
     @GetMapping("/dddemo")
     public void demo(String id) {
