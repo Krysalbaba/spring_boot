@@ -3,10 +3,11 @@ server:
   address: 0.0.0.0
 
 mybatis-plus:
-  mapper-locations: classpath*:mapper/*/*.xml
+  mapper-locations: classpath*:mapper/*.xml
   configuration:
     # sql 语句打印
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
   global-config:
     db-config:
       logic-delete-value: 1  #已删除
@@ -19,7 +20,7 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://47.101.201.211/venus_mall?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
       username: root
-      password: 123456
+      password: wtf12138+++
       initial-size: 5
       max-active: 20
       min-idle: 5
