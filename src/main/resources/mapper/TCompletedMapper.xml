@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.nie.mapper.TCompletedMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.java.nie.domain.TCompleted">
+        <id column="id" property="id" />
+        <result column="reported_id" property="reportedId" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="equipment_room" property="equipmentRoom" />
+        <result column="telecommunications_room" property="telecommunicationsRoom" />
+        <result column="distribution_room" property="distributionRoom" />
+        <result column="user_number" property="userNumber" />
+        <result column="pipe_hole_number" property="pipeHoleNumber" />
+        <result column="pipe_length" property="pipeLength" />
+        <result column="realty_management_company" property="realtyManagementCompany" />
+        <result column="status" property="status" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_time" property="createTime" />
+        <result column="logic_delete" property="logicDelete" />
+        <result column="create_dept" property="createDept" />
+        <result column="create_by" property="createBy" />
+        <result column="update_by" property="updateBy" />
+        <result column="reported_time" property="reportedTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, reported_id, start_time, end_time, equipment_room, telecommunications_room, distribution_room, user_number, pipe_hole_number, pipe_length, realty_management_company, status, update_time, create_time, logic_delete, create_dept, create_by, update_by, reported_time
+    </sql>
+
+
+
+    <select id="export" resultType="com.java.nie.common.entity.vo.CompletedExportVo">
+        SELECT
+        rd.construction_unit,
+        rd.design_unit,
+        rd.process_unit,
+        rd.supervising_unit,
+        c.`status`,
+        c.reported_time,
+        up.project_name
+        FROM
+        t_completed c
+        LEFT JOIN
+        t_reported_data rd ON  c.reported_id =rd.id
+        LEFT JOIN t_user_project up ON rd.user_project_id = up.id
+        WHERE
+        c.id in (
+        <foreach collection="ids" item="item" separator=",">
+            #{item}
+        </foreach>
+        )
+    </select>
+
+</mapper>

@@ -129,6 +129,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.77</version>
         </dependency>
+        <!--easyExcel 文件导出 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>3.1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
