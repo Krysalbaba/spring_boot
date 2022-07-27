@@ -198,7 +198,7 @@
                     <!-- 指定 Dockerfile 路径-->
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                     <!--指定远程docker环境地址-->
-                    <dockerHost>http://192.168.0.88:2375</dockerHost>
+                    <dockerHost>https://81.69.45.15:2376</dockerHost>
                     <!-- 复制jar包到docker容器指定目录配置 -->
                     <resources>
                         <resource>
