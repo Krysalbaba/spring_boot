@@ -135,6 +135,12 @@
             <artifactId>easyexcel</artifactId>
             <version>3.1.0</version>
         </dependency>
+        <!--配置文件脱敏-->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>3.0.3</version>
+        </dependency>
     </dependencies>
 
     <build>
