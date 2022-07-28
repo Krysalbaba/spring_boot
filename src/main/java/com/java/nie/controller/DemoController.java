@@ -1,17 +1,27 @@
 package com.java.nie.controller;
 
 
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.DateUtil;
+import com.alibaba.excel.util.DateUtils;
 import com.java.nie.config.RabbitMQConfig;
 import com.java.nie.config.RedisService;
+import com.java.nie.utils.DateCalculationUtil;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/demo")
@@ -22,6 +32,9 @@ public class DemoController {
 
     @Autowired
     private RedisService redisService;
+
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
 
     @GetMapping("/test1")
     public void test1() {
@@ -87,4 +100,16 @@ public class DemoController {
     public void set(Boolean isSend) {
         redisService.hset("DS2022:cache:config", "isSend", isSend);
     }
+
+
+    public static void main(String[] args) {
+        Date now = DateUtil.beginOfDay(new Date());
+        Date offDay = DateUtil.offsetDay(now, -6);
+        List<DateTime> dateTimes = DateUtil.rangeToList(offDay, now, DateField.DAY_OF_MONTH);
+        for (DateTime x : dateTimes) {
+            String format = new SimpleDateFormat(DateUtils.DATE_FORMAT_10).format(x);
+            System.out.println(format);
+        }
+    }
+
 }
