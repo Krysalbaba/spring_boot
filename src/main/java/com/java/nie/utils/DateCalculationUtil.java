@@ -36,4 +36,24 @@ public class DateCalculationUtil {
         betweenTime.add(sdf.format(eCalendar.getTime()));
         return betweenTime ;
     }
+
+    public static String getLatest12Month(Date date){
+        Calendar from  =  Calendar.getInstance();
+        from.setTime(date);
+        from.add(Calendar.MONTH, -11);
+        return from.get(Calendar.YEAR)+"-"+fillZero(from.get(Calendar.MONTH)+1 )+"-"+"01";
+    }
+
+    /**
+     * 格式化月份
+     */
+    public static String fillZero(int i){
+        String month = "";
+        if(i<10){
+            month = "0" + i;
+        }else{
+            month = String.valueOf(i);
+        }
+        return month;
+    }
 }
