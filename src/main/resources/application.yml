@@ -43,6 +43,30 @@ spring:
         acknowledge-mode: manual
       direct:
         acknowledge-mode: manual
+  application:
+    name: spring-boot11
+
+
+transmission:
+  kafka-offset-prefix: "kafka:offset:${spring.application.name}-202208211200"
+  subscribe-name: "nanjingjxz-dev-e2r_v2x_up_vehicle_realtime,nanjingjxz-dev-e2r_v2x_up_vehicle_realtime_event,nanjingjxz-dev-e2r_v2x_up_mec_event,nanjingjxz-dev-e2r_v2x_up_mec_condition,nanjingjxz-dev-e2r_v2x_up_mec_ptc"
+  poll-timeout-ms: 1000
+  consumer:
+    bootstrap.servers: 192.168.59.86:9092
+    group.id: ${spring.application.name}-202208230915
+    enable.auto.commit: false
+    auto.offset.reset: latest
+    max.poll.records: 5000
+    max.partition.fetch.bytes: 1048576
+    key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  producer:
+    bootstrap.servers: 192.168.59.86:9092
+    acks: "1"
+    linger.ms: 500
+    retries: 0
+    key.serializer: org.apache.kafka.common.serialization.StringSerializer
+    value.serializer: org.apache.kafka.common.serialization.StringSerializer
 
 jasypt:
   encryptor:

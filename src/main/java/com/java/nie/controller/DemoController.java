@@ -112,4 +112,37 @@ public class DemoController {
         }
     }
 
+
+    private  final static String  PTC_COUNT= "ptc-count:" ;
+
+    @GetMapping("/between/demo")
+    public void demo1() throws ParseException {
+        List<Map<String,Object>> result = new ArrayList<>();
+        Set<String> keys = redisTemplate.keys(PTC_COUNT + "*");
+        for (String key :keys ){
+            Map<String,Object>  info=new HashMap<>();
+            Map<Object, Object> paramMap = redisService.hmget(key);
+            Object startTime = paramMap.get("startTime");
+            Object endTime = paramMap.get("endTime");
+            Long between = between(startTime.toString(), endTime.toString());
+            String[] split = key.split(":");
+            info.put("between",between);
+            info.put("ptcId",split[1]);
+            result.add(info);
+        }
+
+        result.sort(Comparator.comparing(o ->Long.parseLong(o.get("between").toString())));
+        System.out.println(result);
+    }
+
+    public Long between(String startTime , String endTime) throws ParseException {
+        SimpleDateFormat simpleFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date fromDate3 = simpleFormat.parse(startTime);
+        Date toDate3 = simpleFormat.parse(endTime);
+        long from3 = fromDate3.getTime();
+        long to3 = toDate3.getTime();
+        long s = ((to3 - from3) / 1000 );
+        return s ;
+    }
+
 }

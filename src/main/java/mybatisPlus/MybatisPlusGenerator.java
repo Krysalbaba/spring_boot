@@ -9,7 +9,7 @@ public class MybatisPlusGenerator {
 
 
     public static void main(String[] args) {
-        FastAutoGenerator.create("jdbc:mysql://47.101.201.211:3306/authority?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8", "root", "wtf12138+++")
+        FastAutoGenerator.create("jdbc:mysql://81.69.45.15:3306/authority?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8", "root", "wtf12138++")
                 .globalConfig(builder -> {
                     builder.author("nie") // 设置作者
                             .enableSwagger() // 开启 swagger 模式
@@ -27,7 +27,7 @@ public class MybatisPlusGenerator {
                             .pathInfo(Collections.singletonMap(OutputFile.mapperXml, "D:/Work/IDEA/demo/spring_boot/src/main/resources/mapper")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude("t_completed") // 设置需要生成的表名
+                    builder.addInclude("da_road_traffic") // 设置需要生成的表名
                             .entityBuilder()//实体类配置
                             .enableLombok()//开启lombok注解
                             .controllerBuilder()//controller配置
