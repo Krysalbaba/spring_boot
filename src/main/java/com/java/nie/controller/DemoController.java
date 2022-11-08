@@ -5,8 +5,11 @@ import cn.hutool.core.date.DateField;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.date.DateUtil;
 import com.alibaba.excel.util.DateUtils;
+import com.java.nie.config.MonthTableNameHandler;
 import com.java.nie.config.RabbitMQConfig;
 import com.java.nie.config.RedisService;
+import com.java.nie.domain.YarntaskLog;
+import com.java.nie.mapper.YarntaskLogMapper;
 import com.java.nie.utils.DateCalculationUtil;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +40,9 @@ public class DemoController {
 
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+
+    @Resource
+    private YarntaskLogMapper yarntaskLogMapper ;
 
     @GetMapping("/test1")
     public void test1() {
@@ -94,6 +100,14 @@ public class DemoController {
 
         result.sort(Comparator.comparing(o ->Long.parseLong(o.get("between").toString())));
         System.out.println(result);
+    }
+
+
+    @GetMapping("/yarnLog")
+    public void yarnLog(){
+        MonthTableNameHandler.setMonth("202211");
+        int insert = yarntaskLogMapper.insert(new YarntaskLog());
+        System.out.println(insert);
     }
 
     public Long between(String startTime , String endTime) throws ParseException {

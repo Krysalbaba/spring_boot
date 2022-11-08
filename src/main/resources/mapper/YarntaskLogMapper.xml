@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.nie.mapper.YarntaskLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.java.nie.domain.YarntaskLog">
+        <id column="id" property="id" />
+        <result column="task_id" property="taskId" />
+        <result column="task_type" property="taskType" />
+        <result column="states" property="states" />
+        <result column="log_time" property="logTime" />
+        <result column="logger" property="logger" />
+        <result column="method" property="method" />
+        <result column="level" property="level" />
+        <result column="message" property="message" />
+        <result column="exception" property="exception" />
+        <result column="nodeip" property="nodeip" />
+    </resultMap>
+
+
+    <insert id="createTable">
+        CREATE TABLE ${tableName} (
+           `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+           `task_id` bigint NOT NULL,
+           `task_type` tinyint(1) NOT NULL,
+           `states` tinyint(1) NOT NULL COMMENT '任务状态（-1：开始；0：执行中；1：执行结束-成功；2：执行结束-失败）',
+           `log_time` datetime(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+           `logger` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+           `method` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+           `level` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+           `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+           `counting` int DEFAULT NULL COMMENT '处理条数计数',
+           `exception` text CHARACTER SET utf8 COLLATE utf8_general_ci,
+           `nodeip` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+           `create_time` datetime(3) DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(3),
+           PRIMARY KEY (`id`) USING BTREE,
+           KEY `idx_taskid` (`task_id`) USING BTREE
+        ) ENGINE=InnoDB AUTO_INCREMENT=23796216 DEFAULT CHARSET=utf8 COMMENT='yarn任务日志';
+    </insert>
+
+</mapper>
