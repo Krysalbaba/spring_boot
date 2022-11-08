@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -69,47 +71,6 @@ public class DemoController {
     public void test5() {
         String msg = "测试fanout是否可以消费";
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_FANOUT_DEMO,"", msg);
-    }
-
-    @GetMapping("/dddemo")
-    public void demo(String id) {
-        //指定延时队列交换机   延时队列路由  和  设置消息过期时间
-//        rabbitTemplate.convertAndSend(RabbitMQConfig.DIRECT_DELAY_EXCHANGE_NAME, RabbitMQConfig.ROUTING_KEY_DELAY, id, mes -> {
-//            mes.getMessageProperties().setExpiration(1000 * 20 + "");
-//            return mes;
-//        });
-
-        /**
-         * redis 测试
-         */
-        long expire = redisService.getExpire("DS2022:mail");
-        System.err.println("剩余时间为-----------------》" + expire);
-
-    }
-
-    @GetMapping("/test")
-    public void test() {
-        Object hget = redisService.hget("mail", "kuwoCount");
-        Object hget1 = redisService.hget("demo", "kuwoCount");
-        System.err.println("hget-----------------》" + hget);
-        System.err.println("===============================================");
-        System.err.println("hget1-----------------》" + hget1);
-    }
-
-    @GetMapping("/set")
-    public void set(Boolean isSend) {
-        redisService.hset("DS2022:cache:config", "isSend", isSend);
-    }
-
-
-    public static void main(String[] args) {
-        Date now = DateUtil.beginOfDay(new Date());
-        Date offDay = DateUtil.offsetDay(now, -6);
-        List<DateTime> dateTimes = DateUtil.rangeToList(offDay, now, DateField.DAY_OF_MONTH);
-        for (DateTime x : dateTimes) {
-            String format = new SimpleDateFormat(DateUtils.DATE_FORMAT_10).format(x);
-            System.out.println(format);
-        }
     }
 
 
