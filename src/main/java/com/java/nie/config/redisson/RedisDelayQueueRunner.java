@@ -3,6 +3,9 @@ package com.java.nie.config.redisson;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.java.nie.utils.RedisDelayQueueUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RBlockingDeque;
+import org.redisson.api.RDelayedQueue;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
@@ -18,28 +21,27 @@ import java.util.concurrent.TimeUnit;
 public class RedisDelayQueueRunner implements CommandLineRunner {
 
     @Autowired
-    private RedisDelayQueueUtil redisDelayQueueUtil;
-    @Autowired
-    private ApplicationContext context;
+    private RedissonClient redissonClient;
+
+/*    @Autowired
+    private ApplicationContext context;*/
     @Autowired
     private ThreadPoolTaskExecutor ptask;
 
 
-    ThreadPoolExecutor executorService = new ThreadPoolExecutor(3, 5, 30, TimeUnit.SECONDS,
-            new LinkedBlockingQueue<Runnable>(1000),new ThreadFactoryBuilder().setNameFormat("order-delay-%d").build());
+/*    ThreadPoolExecutor executorService = new ThreadPoolExecutor(3, 5, 30, TimeUnit.SECONDS,
+            new LinkedBlockingQueue<Runnable>(1000),new ThreadFactoryBuilder().setNameFormat("order-delay-%d").build());*/
 
     @Override
     public void run(String... args) throws Exception {
         ptask.execute(() -> {
             while (true){
                 try {
-                    RedisDelayQueueEnum[] queueEnums = RedisDelayQueueEnum.values();
-                    for (RedisDelayQueueEnum queueEnum : queueEnums) {
-                        Object value = redisDelayQueueUtil.getDelayQueue(queueEnum.getCode());
-                        if (value != null) {
-                            RedisDelayQueueHandle<Object> redisDelayQueueHandle = (RedisDelayQueueHandle<Object>)context.getBean(queueEnum.getBeanId());
-                            executorService.execute(() -> {redisDelayQueueHandle.execute(value);});
-                        }
+                    RBlockingDeque<String> blockingDeque = redissonClient.getBlockingDeque("ORDER_TIMEOUT_NOT_EVALUATED");
+                    RDelayedQueue<String> delayedQueue = redissonClient.getDelayedQueue(blockingDeque);
+                    String poll = blockingDeque.poll();
+                    if (poll != null) {
+                        log.info("poll");
                     }
                     TimeUnit.MILLISECONDS.sleep(500);
                 } catch (InterruptedException e) {

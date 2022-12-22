@@ -2,6 +2,9 @@ package com.java.nie.controller;
 
 
 import com.java.nie.utils.RedisDelayQueueUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RBlockingDeque;
+import org.redisson.api.RDelayedQueue;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -17,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/http")
+@Slf4j
 public class HttpController {
 
 
@@ -39,7 +43,12 @@ public class HttpController {
 
     @GetMapping("/delay/{time}")
     public void delay(@PathVariable("time")Integer time){
-        redisDelayQueueUtil.addDelayQueue("测试消息",time, TimeUnit.SECONDS,"ORDER_TIMEOUT_NOT_EVALUATED");
+
+        RBlockingDeque<Object> blockingDeque = redissonClient.getBlockingDeque("ORDER_TIMEOUT_NOT_EVALUATED");
+        RDelayedQueue<Object> delayedQueue = redissonClient.getDelayedQueue(blockingDeque);
+        delayedQueue.offer("测试消息", time, TimeUnit.SECONDS);
+        //delayedQueue.destroy();
+        log.info("(添加延时队列成功) 队列键：{}，队列值：{}，延迟时间：{}", "ORDER_TIMEOUT_NOT_EVALUATED", "测试消息", TimeUnit.SECONDS.toSeconds(time) + "秒");
 
     }
 
