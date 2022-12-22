@@ -19,6 +19,7 @@ spring:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: NIE(vyK3r+9yZG6xS4KlpPp+ffvOXSHIhx98d5f6PhRzeuy+G00oR6l+r0rEiDwQuZrrIeHIfhibycLToLUj2hn3ZKOcBbv/Iu47RHflipssSZYGoY/YlgcKfDo/op5PACYBsWpkybx/kg7viOESRH5vL3grUuO/cLoPo7TrZD3hTusDmnjCmDSbw28NJN8UE5qhoAY3HwlSR2AZNYoEctRslA==)
+#      url: jdbc:mysql://81.69.45.15:3306/authority?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true
       username: NIE(RFymkRNkUKxRSSnggHSZKaUMuiwz5AH/UpwyilI5hYK9ID8ayBIgj88Yz+y7JDjq)
       password: NIE(Bemk3aSkJm56SUQKeXBQLgCUN2xgFPLsX8tVW3cyZlreVMOW+TtvyAGxSamY86B6)
       initial-size: 5
