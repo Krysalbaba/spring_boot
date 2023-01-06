@@ -229,4 +229,26 @@ public class RabbitMQConfig {
     public Binding bindingFanoutTwo() {
         return BindingBuilder.bind(createFanoutQueueTwo()).to(createFanoutExchange());
     }
+
+
+    public static final String DELAYED_QUEUE_NAME = "delayed.queue.name" ;
+    public static final String DELAYED_EXCHANGE_NAME = "delayed.exchange.name" ;
+
+
+    @Bean
+    public Queue createDelayedQueue() {
+        return new Queue(DELAYED_QUEUE_NAME, false);
+    }
+
+    @Bean
+    public CustomExchange customExchange(){
+        Map<String,Object> delayMap = new HashMap<>();
+        delayMap.put("x-delayed-type","direct");
+        return new CustomExchange(DELAYED_EXCHANGE_NAME,"x-delayed-message",true,false,delayMap);
+    }
+
+    @Bean
+    public Binding bindingDelayed() {
+        return BindingBuilder.bind(createDelayedQueue()).to(customExchange()).with(DELAYED_QUEUE_NAME).noargs();
+    }
 }
