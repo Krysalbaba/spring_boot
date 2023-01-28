@@ -230,7 +230,7 @@ ps  :
 
 
 
-## 五、Java
+## 五、Java + Spring
 
 ### 5.1  Async(异步)
 
@@ -308,6 +308,105 @@ ps  :
 ```
 主要存放Class和Meta(元数据的信息)、Class在加载时放入永久代中
 ```
+
+
+
+### 5.4 spring boot 启动顺序
+
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6ba8bf5c8177430b8f462f35948d1c74~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?" alt="img" style="zoom: 67%;" />
+
+#### 5.4.1 @SpringBootApplication
+
+```java
+-  @SpringBootConfiguration
+   继承了Configuration，表示当前是注解类
+    
+-  @EnableAutoConfiguration
+   开启springboot的注解功能，springboot的四大神器之一，其借助@import的帮助
+    
+-  @ComponentScan
+   basePackages属性配置扫描路径,不写默认当前类路径
+
+
+```
+
+
+
+#### 5.4.2  new SpringApplication()
+
+```java
+this.resourceLoader = resourceLoader;
+Assert.notNull(primarySources, "PrimarySources must not be null");
+this.primarySources = new LinkedHashSet<>(Arrays.asList(primarySources));
+// 判断当前程序类型
+this.webApplicationType = WebApplicationType.deduceFromClasspath();
+// 使用SpringFactoriesLoader 实例化所有可用的初始器
+setInitializers((Collection) getSpringFactoriesInstances(ApplicationContextInitializer.class));
+// 使用SpringFactoriesLoader 实例化所有可用的监听器
+setListeners((Collection) getSpringFactoriesInstances(ApplicationListener.class));
+// 配置应用主方法所在类
+this.mainApplicationClass = deduceMainApplicationClass();
+```
+
+
+
+#### 5.4.3  SpringApplication.run()
+
+```java
+		// 开启时钟计时
+		StopWatch stopWatch = new StopWatch();
+		stopWatch.start();
+		// spirng 上下文
+		ConfigurableApplicationContext context = null;
+		// 启动异常报告容器
+		Collection<SpringBootExceptionReporter> exceptionReporters = new ArrayList<>();
+		// 开启设置，让系统模拟不存在io设备
+		configureHeadlessProperty();
+		// 初始化SpringApplicationRunListener 监听器，并进行封装
+		SpringApplicationRunListeners listeners = getRunListeners(args);
+		listeners.starting();
+		try {
+			ApplicationArguments applicationArguments = new DefaultApplicationArguments(args);
+            // Environment 的准备 
+			ConfigurableEnvironment environment = prepareEnvironment(listeners,applicationArguments);
+			configureIgnoreBeanInfo(environment);
+            // banner
+			Banner printedBanner = printBanner(environment);
+            // 创建上下文实例
+			context = createApplicationContext();
+            // 异常播报器，默认有org.springframework.boot.diagnostics.FailureAnalyzers
+			exceptionReporters = getSpringFactoriesInstances(
+					SpringBootExceptionReporter.class,
+					new Class[] { ConfigurableApplicationContext.class }, context);
+             // 容器初始化
+			prepareContext(context, environment, listeners, applicationArguments,printedBanner);
+            // 刷新上下文容器 
+			refreshContext(context);
+            // 给实现类留的钩子，这里是一个空方法。
+			afterRefresh(context, applicationArguments);
+			stopWatch.stop();
+			if (this.logStartupInfo) {
+				new StartupInfoLogger(this.mainApplicationClass).logStarted(getApplicationLog(), stopWatch);
+			}
+			listeners.started(context);
+			callRunners(context, applicationArguments);
+		}
+		catch (Throwable ex) {
+			handleRunFailure(context, ex, exceptionReporters, listeners);
+			throw new IllegalStateException(ex);
+		}
+
+		try {
+			listeners.running(context);
+		}
+		catch (Throwable ex) {
+			handleRunFailure(context, ex, exceptionReporters, null);
+			throw new IllegalStateException(ex);
+		}
+		return context;
+```
+
+
 
 
 
