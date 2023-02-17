@@ -28,6 +28,11 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author nie
+ * @date 2023-02-17
+ * @apiNote 中间件集成测试
+ */
 @RestController
 @RequestMapping("/demo")
 public class DemoController {

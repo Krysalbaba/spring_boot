@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 
+/**
+ * @author nie
+ * @date 2023-02-17
+ * @apiNote 获取图片信息
+ */
 @RestController
 @RequestMapping("/")
 public class ImageController {

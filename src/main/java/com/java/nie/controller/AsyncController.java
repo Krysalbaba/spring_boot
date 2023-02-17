@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.concurrent.Future;
 
+/**
+ * @author nie
+ * @date 2023-02-17
+ * @apiNote  异步简单使用
+ */
 @RequestMapping("/async")
 @RestController
 public class AsyncController {

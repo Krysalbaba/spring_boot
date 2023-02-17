@@ -22,12 +22,9 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * <p>
- * 用户表 前端控制器
- * </p>
- *
  * @author nie
- * @since 2021-12-28
+ * @date 2023-02-17
+ * @apiNote mybatis-plus 简单测试
  */
 @RestController
 @RequestMapping("/tUser")

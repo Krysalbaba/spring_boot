@@ -25,12 +25,10 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * <p>
- * 文件上传 前端控制器
- * </p>
  *
  * @author nie
  * @since 2022-07-05
+ * @apiNote 测试文件打包为zip返回
  */
 @RestController
 @RequestMapping("/fileInfo")

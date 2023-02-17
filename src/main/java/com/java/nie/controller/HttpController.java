@@ -18,6 +18,11 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author nie
+ * @date 2023-02-17
+ * @apiNote httpclient调用测试
+ */
 @RestController
 @RequestMapping("/http")
 @Slf4j

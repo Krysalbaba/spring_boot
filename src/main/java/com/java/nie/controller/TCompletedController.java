@@ -18,12 +18,9 @@ import java.net.URLEncoder;
 import java.util.List;
 
 /**
- * <p>
- * 竣工信息表 前端控制器
- * </p>
- *
  * @author nie
- * @since 2022-07-07
+ * @date 2023-02-17
+ * @apiNote excel文件导出
  */
 @RestController
 @RequestMapping("/tCompleted")

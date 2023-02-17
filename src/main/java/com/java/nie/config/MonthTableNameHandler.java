@@ -5,6 +5,11 @@ import com.baomidou.mybatisplus.extension.plugins.handler.TableNameHandler;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author nie
+ * @date 2023-02-17
+ *  mybatis-plus 月表设置
+ */
 public class MonthTableNameHandler implements TableNameHandler {
 
     private List<String> tableNames;

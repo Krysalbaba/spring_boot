@@ -7,11 +7,16 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+
+/**
+ * @author nie
+ * @date 2023-02-17
+ *  线程池测试
+ */
 @Component
 @Slf4j
 public class MyApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
