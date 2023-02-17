@@ -20,7 +20,11 @@
 
 ### 1.2    注意事项
 
-  1、更改完配置后  打包之前在idea里重新连接 docker容器
+```java
+ 1、更改完配置后  打包之前在idea里重新连接 docker容器
+ 2、idea连接docker时 设置ca证书则需要通过https连接  未设置则通过tcp连接
+ 3、出现日志乱码首先查看容器内部日志
+```
 
 
 
@@ -350,6 +354,21 @@ ps  :
 
 <img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6ba8bf5c8177430b8f462f35948d1c74~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp?" alt="img" style="zoom: 67%;" />
 
+
+
+```java
+执行顺序 :
+	bean 初始化完成  ->  所有实现ApplicationListener<ContextRefreshedEvent> 的类  -> 所有实现CommandLineRunner 的类
+    
+ps : 实现CommandLineRunner比实现ApplicationListener更加灵活 可以在前者类上使用@Order注解来表名执行顺序
+```
+
+
+
+
+
+
+
 #### 5.4.1 @SpringBootApplication
 
 ```java
@@ -441,6 +460,67 @@ this.mainApplicationClass = deduceMainApplicationClass();
 		return context;
 ```
 
+
+
+### 5.5 线程池
+
+#### 5.5.1 Executors(不推荐)
+
+```java
+- newCachedThreadPool 
+    创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收线程，则新建线程  
+    调用new ThreadPoolExecutor
+- newFixedThreadPool 
+    创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。
+    调用new ThreadPoolExecutor
+- newScheduledThreadPool 
+    创建一个定长线程池，支持定时及周期性任务执行。
+    调用new ThreadPoolExecutor
+- newSingleThreadExecutor
+    创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行。
+    调用new ScheduledThreadPoolExecutor
+```
+
+#### 5.5.2  ThreadPoolExecutor
+
+```java
+参数介绍:
+   - corePoolSize   核心线程池大小
+   - maximumPoolSize  最大线程池大小
+   - keepAliveTime    线程最大空闲时间
+   - unit            时间单位
+   - workQueue      线程等待队列
+   - threadFactory   线程创建工厂
+   - handler     拒绝策略
+  
+```
+
+
+
+#### 5.5.3  ScheduledThreadPoolExecutor
+
+```java
+参数介绍:
+   - corePoolSize   核心线程池大小
+   - threadFactory   线程创建工厂
+   - handler     拒绝策略
+常用方法介绍:
+   - schedule(Runnable command,long delay, TimeUnit unit)   指定command任务将在delay延迟后执行
+   - schedule(Callable<V> callable,long delay, TimeUnit unit)  指定callable任务将在delay延迟后执行
+   - scheduleAtFixedRate(Runnable command,long initialDelay,long period,TimeUnit unit)   initialDelay + period 开始， initialDelay + n * period 处执行
+   - scheduleWithFixedDelay(Runnable command,long initialDelay,long delay,TimeUnit unit);   创建并执行一个在给定初始延迟后首次启用的定期操作，上一次任务执行完成到下一次任务开始都存在 delay的延迟 、如果任务在任一一次执行时遇到异常，就会取消后续执行、否则，只能通过程序来显式取消或终止该任务
+
+```
+
+
+
+#### 5.5.4 注意事项
+
+```java
+- callable  和 runnable的区别
+	Runnable 接口 run 方法无返回值；Callable 接口 call 方法有返回值，是个泛型，和Future、FutureTask配合可以用来获取异步执行的结果
+	Runnable 接口 run 方法只能抛出运行时异常，且无法捕获处理；Callable 接口 call 方法允许抛出异常，可以获取异常信息
+```
 
 
 
