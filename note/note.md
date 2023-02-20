@@ -24,6 +24,10 @@
  1、更改完配置后  打包之前在idea里重新连接 docker容器
  2、idea连接docker时 设置ca证书则需要通过https连接  未设置则通过tcp连接
  3、出现日志乱码首先查看容器内部日志
+ 4、进入容器报错找不到地址、可能是因为镜像原因不一致导致
+    - docker exec -it container-test /bin/bash
+	- docker exec -it container-test /bin/sh
+	- docker exec -it container-test /bin/csh
 ```
 
 
@@ -553,3 +557,42 @@ this.mainApplicationClass = deduceMainApplicationClass();
 ### 6.2 参考文档
 
 >设计模式参考文档  https://refactoringguru.cn/design-patterns/singleton/java/example#example-2
+
+
+
+## 七、 监控工具
+
+### 7.1 arthas
+
+#### 7.1.1 linux上运行
+
+```java
+- 利用curl 命令下载arthas.jar
+- java -jar arthas.jar {pid}  利用arthas 监控jar包
+```
+
+
+
+#### 7.1.2 docker中运行
+
+```java
+- dockerFile中添加arthas到容器中
+- 运行容器
+- 到arthas 挂载路径中启动arthas 并监听jar
+```
+
+
+
+#### 注意事项
+
+```java
+- docker中运行arthas时 会出现无法监听pid为1的jar,通过更换jdk源为eclipse-temurin:8-jdk-alpine或空跑一个任务占用pid为1的运行任务解决
+```
+
+
+
+#### 参考文档
+
+> linux中运行   https://arthas.aliyun.com/doc/quick-start.html   
+
+> docker中运行   https://www.cnblogs.com/alisystemsoftware/p/17107089.html
