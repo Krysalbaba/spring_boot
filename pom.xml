@@ -252,7 +252,7 @@
                     <!--指定远程docker环境地址-->
                     <dockerHost>https://81.69.45.15:2376</dockerHost>
                     <!--docker ca证书存放位置-->
-                    <dockerCertPath>D:\Tool\DockerCA</dockerCertPath>
+                    <dockerCertPath>D:\tool\docker\ca</dockerCertPath>
                     <!-- 复制jar包到docker容器指定目录配置 -->
                     <resources>
                         <resource>
