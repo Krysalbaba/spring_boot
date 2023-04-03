@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Collections;
+
 @Configuration
 public class RestTemplateConfig {
 
@@ -16,8 +18,14 @@ public class RestTemplateConfig {
         httpRequestFactory.setConnectionRequestTimeout(3000);
         httpRequestFactory.setConnectTimeout(3000);
         httpRequestFactory.setReadTimeout(20000);
+        RestTemplate restTemplate = new RestTemplate(httpRequestFactory);
+        restTemplate.setInterceptors(Collections.singletonList(logClientHttpRequestInterceptor()));
+        return  restTemplate ;
+    }
 
-        return new RestTemplate(httpRequestFactory);
+    @Bean
+    public LogClientHttpRequestInterceptor logClientHttpRequestInterceptor (){
+        return new LogClientHttpRequestInterceptor();
     }
 
 }
